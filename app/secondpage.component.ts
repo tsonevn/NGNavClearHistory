@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {NS_ROUTER_DIRECTIVES, RouterExtensions} from 'nativescript-angular/router';
+import {ActivatedRoute} from "@angular/router";
+ import {Observable} from "rxjs"
 
 
 
@@ -14,9 +16,11 @@ import {NS_ROUTER_DIRECTIVES, RouterExtensions} from 'nativescript-angular/route
     </StackLayout>`
 })
 export class SecondComponent {
-     constructor(private routerExtensions:RouterExtensions){
+    public id:Observable<string>
+     constructor(private routerExtensions:RouterExtensions, route: ActivatedRoute) {
+        console.log(route.snapshot.params['data']);
+        console.log(global.myjson);
     }
-
     public nextPage(){
         this.routerExtensions.navigate(["/first"], { clearHistory: true });
     }

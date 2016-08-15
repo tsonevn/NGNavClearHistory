@@ -8,7 +8,7 @@ import { SecondComponent } from "./secondpage.component";
 export const routes: RouterConfig = [
   { path: "", redirectTo: "/first", terminal: true },
   { path: "first", component: FirstComponent},
-  { path: "second", component: SecondComponent}
+  { path: "second/:data", component: SecondComponent}
 ]
 
 
